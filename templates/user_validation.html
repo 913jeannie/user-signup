@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Signup Heading at top of page -->
+<h1>Signup</h1>
+<!-- form build including table and error span next to applicable form field -->
+	<form method="post" action="/validate-user">
+		<table>
+			<tr>
+				<td><label for="username">Username</label></td>
+				<td>
+					<input name="username" type="text" value="{{ username }}">
+					<span class="error">{{ username_error }}</span>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="password">Password</label></td>
+				<td>
+					<input name="password" type="password" value="{{ password }}">
+					<span class="error">{{ password_error }}</span>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="verify">Verify Password</label></td>
+				<td>
+					<input name="verify" type="password" value="{{ verify }}">
+					<span class="error">{{ verify_error }}</span>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="email">Email (optional)</label></td>
+				<td>
+					<input name="email" value="{{ email }}">
+					<span class="error">{{ email_error }}</span>
+				</td>
+			</tr>
+		</table>
+		<input type="submit">
+	</form>
+	
+{% endblock %}
